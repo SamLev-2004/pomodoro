@@ -1,0 +1,38 @@
+name: Pomodoro
+options:
+  bundleIdPrefix: com.pomodoro
+  deploymentTarget:
+    macOS: "13.0"
+  createIntermediateGroups: true
+
+packages:
+  KeyboardShortcuts:
+    url: https://github.com/sindresorhus/KeyboardShortcuts
+    from: "2.0.0"
+
+targets:
+  Pomodoro:
+    type: application
+    platform: macOS
+    sources:
+      - path: Pomodoro
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pomodoro.app
+        SWIFT_VERSION: "5.9"
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        INFOPLIST_FILE: Pomodoro/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Pomodoro/Pomodoro.entitlements
+    dependencies:
+      - package: KeyboardShortcuts
+
+  PomodoroTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: PomodoroTests
+    dependencies:
+      - target: Pomodoro
+    settings:
+      base:
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
