@@ -2,6 +2,19 @@ import XCTest
 @testable import Pomodoro
 
 final class AppSettingsTests: XCTestCase {
+
+    override func setUp() {
+        super.setUp()
+        let d = UserDefaults.standard
+        d.removeObject(forKey: "workDuration")
+        d.removeObject(forKey: "shortBreakDuration")
+        d.removeObject(forKey: "longBreakDuration")
+        d.removeObject(forKey: "sessionsBeforeLongBreak")
+        d.removeObject(forKey: "soundEnabled")
+        d.removeObject(forKey: "soundName")
+        d.removeObject(forKey: "autoStart")
+    }
+
     func test_defaultWorkDuration_is25Minutes() {
         let settings = AppSettings()
         XCTAssertEqual(settings.workDuration, 25 * 60)

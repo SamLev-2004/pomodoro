@@ -134,11 +134,15 @@ class TimerStore: ObservableObject {
     }
 
     @objc private func handleWake() {
-        guard isRunning, let startDate = startDate else { return }
-        let elapsed = Int(Date().timeIntervalSince(startDate))
-        secondsRemaining = max(0, startSecondsRemaining - elapsed)
-        if secondsRemaining == 0 {
-            Task { @MainActor in sessionComplete() }
+        Task { @MainActor [weak self] in
+            guard let self = self,
+                  self.isRunning,
+                  let startDate = self.startDate else { return }
+            let elapsed = Int(Date().timeIntervalSince(startDate))
+            self.secondsRemaining = max(0, self.startSecondsRemaining - elapsed)
+            if self.secondsRemaining == 0 {
+                self.sessionComplete()
+            }
         }
     }
 }
