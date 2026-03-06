@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		021D00E500451600D1F1C151 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = CA3CFA36F3082C91A372AD88 /* KeyboardShortcuts */; };
+		63FBE426AB9099C0E9AEC3A7 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E842AFE20D56260713FE0 /* AppSettings.swift */; };
+		B71ECF8689991149FA6F36F5 /* SessionPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643675B6F351900FC27E54E /* SessionPhase.swift */; };
 		E0FC4C40FF44D22D650F893F /* PomodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89720243547C2AC7DE9E92D8 /* PomodoroApp.swift */; };
+		FAA146F1F4AC51A9474C41DB /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D1CE255AE79D43D8FF3CF /* AppSettingsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,10 +26,13 @@
 
 /* Begin PBXFileReference section */
 		13AE08D9A779DE0DA2F45A23 /* PomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1643675B6F351900FC27E54E /* SessionPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPhase.swift; sourceTree = "<group>"; };
 		1F18AF74266B4F06163B5D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2B2E842AFE20D56260713FE0 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		63C3248B9FAB5C802C03D8BA /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89720243547C2AC7DE9E92D8 /* PomodoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroApp.swift; sourceTree = "<group>"; };
 		A4A840B5E067AC536CFCA2B5 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
+		D15D1CE255AE79D43D8FF3CF /* AppSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +59,11 @@
 		386C7C26EC13AE794F4AA179 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				2B2E842AFE20D56260713FE0 /* AppSettings.swift */,
 				1F18AF74266B4F06163B5D01 /* Info.plist */,
 				A4A840B5E067AC536CFCA2B5 /* Pomodoro.entitlements */,
 				89720243547C2AC7DE9E92D8 /* PomodoroApp.swift */,
+				1643675B6F351900FC27E54E /* SessionPhase.swift */,
 			);
 			path = Pomodoro;
 			sourceTree = "<group>";
@@ -63,6 +71,7 @@
 		4B01775164094D580514E673 /* PomodoroTests */ = {
 			isa = PBXGroup;
 			children = (
+				D15D1CE255AE79D43D8FF3CF /* AppSettingsTests.swift */,
 			);
 			path = PomodoroTests;
 			sourceTree = "<group>";
@@ -155,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA146F1F4AC51A9474C41DB /* AppSettingsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FBE426AB9099C0E9AEC3A7 /* AppSettings.swift in Sources */,
 				E0FC4C40FF44D22D650F893F /* PomodoroApp.swift in Sources */,
+				B71ECF8689991149FA6F36F5 /* SessionPhase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +331,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -327,6 +340,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pomodoro.PomodoroTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
 			};
 			name = Release;
@@ -354,6 +368,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -362,6 +377,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pomodoro.PomodoroTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
 			};
 			name = Debug;

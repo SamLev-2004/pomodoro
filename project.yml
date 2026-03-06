@@ -36,3 +36,5 @@ targets:
     settings:
       base:
         MACOSX_DEPLOYMENT_TARGET: "13.0"
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.9"
