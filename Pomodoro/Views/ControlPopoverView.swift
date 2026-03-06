@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ControlPopoverView: View {
     @ObservedObject var store: TimerStore
+    @Environment(\.openSettings) private var openSettings
 
     var body: some View {
         VStack(spacing: 14) {
@@ -55,11 +56,7 @@ struct ControlPopoverView: View {
                 .padding(.horizontal, -16)
 
             Button("Settings...") {
-                if #available(macOS 14, *) {
-                    NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
-                } else {
-                    NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
-                }
+                openSettings()
                 NSApp.activate(ignoringOtherApps: true)
             }
             .buttonStyle(.plain)

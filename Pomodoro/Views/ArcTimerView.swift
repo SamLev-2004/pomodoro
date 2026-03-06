@@ -1,48 +1,25 @@
 import SwiftUI
 
 struct ArcTimerView: View {
-    @ObservedObject var store: TimerStore
+    @ObservedObject private var store = TimerStore.shared
 
     private let lineWidth: CGFloat = 2.0
     private let size: CGFloat = 16
 
     var body: some View {
-        Canvas { context, canvasSize in
-            let center = CGPoint(x: canvasSize.width / 2, y: canvasSize.height / 2)
-            let radius = min(canvasSize.width, canvasSize.height) / 2 - lineWidth
-
-            // Background track
-            var trackPath = Path()
-            trackPath.addArc(
-                center: center,
-                radius: radius,
-                startAngle: .degrees(-90),
-                endAngle: .degrees(270),
-                clockwise: false
-            )
-            context.stroke(
-                trackPath,
-                with: .color(.secondary.opacity(0.35)),
-                style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
-            )
-
-            // Progress arc
-            let endDegrees = -90 + 360 * store.progress
-            guard store.progress > 0.001 else { return }
-            var arcPath = Path()
-            arcPath.addArc(
-                center: center,
-                radius: radius,
-                startAngle: .degrees(-90),
-                endAngle: .degrees(endDegrees),
-                clockwise: false
-            )
-            context.stroke(
-                arcPath,
-                with: .color(store.phase.arcColor),
-                style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
-            )
+        // TimelineView forces re-renders every 0.5s — MenuBarExtra labels
+        // don't reliably propagate @ObservedObject updates on their own.
+        TimelineView(.periodic(from: .now, by: 0.5)) { _ in
+            Image(systemName: "circle")
+                .font(.system(size: size, weight: .ultraLight))
+                .foregroundStyle(.secondary.opacity(0.4))
+                .overlay {
+                    Circle()
+                        .trim(from: 0, to: store.progress)
+                        .stroke(store.phase.arcColor, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
+                        .rotationEffect(.degrees(-90))
+                        .padding(2)
+                }
         }
-        .frame(width: size, height: size)
     }
 }

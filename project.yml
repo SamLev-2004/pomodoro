@@ -2,7 +2,7 @@ name: Pomodoro
 options:
   bundleIdPrefix: com.pomodoro
   deploymentTarget:
-    macOS: "13.0"
+    macOS: "14.0"
   createIntermediateGroups: true
 
 packages:
@@ -20,7 +20,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.pomodoro.app
         SWIFT_VERSION: "5.9"
-        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
         INFOPLIST_FILE: Pomodoro/Info.plist
         CODE_SIGN_ENTITLEMENTS: Pomodoro/Pomodoro.entitlements
     dependencies:
@@ -35,6 +35,6 @@ targets:
       - target: Pomodoro
     settings:
       base:
-        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
         GENERATE_INFOPLIST_FILE: YES
         SWIFT_VERSION: "5.9"
