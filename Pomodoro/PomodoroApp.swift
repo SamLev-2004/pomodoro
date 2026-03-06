@@ -7,13 +7,13 @@ struct PomodoroApp: App {
     @StateObject private var store = TimerStore.shared
 
     var body: some Scene {
-        MenuBarExtra(
-            store.isRunning
-                ? String(format: "%d:%02d", store.secondsRemaining / 60, store.secondsRemaining % 60)
-                : "",
-            systemImage: "timer"
-        ) {
+        MenuBarExtra {
             ControlPopoverView(store: store)
+        } label: {
+            Image(nsImage: MenuBarIcon.render(
+                progress: store.progress,
+                phase: store.phase
+            ))
         }
         .menuBarExtraStyle(.window)
 

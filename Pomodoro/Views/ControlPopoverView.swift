@@ -55,9 +55,17 @@ struct ControlPopoverView: View {
             Divider()
                 .padding(.horizontal, -16)
 
-            Button("Settings...") {
-                openSettings()
-                NSApp.activate(ignoringOtherApps: true)
+            HStack {
+                Button("Settings...") {
+                    openSettings()
+                    NSApp.activate(ignoringOtherApps: true)
+                }
+
+                Spacer()
+
+                Button("Quit") {
+                    NSApp.terminate(nil)
+                }
             }
             .buttonStyle(.plain)
             .font(.system(size: 12))

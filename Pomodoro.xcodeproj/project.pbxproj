@@ -11,6 +11,7 @@
 		0BAB3A72E1D9C5A6FD7A86A2 /* ControlPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC99DAEA2E7D2BDB06FACA /* ControlPopoverView.swift */; };
 		49D54B0231FAEDCE4FC5295F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAB1DFB44BEA94C764EBDB2 /* SettingsView.swift */; };
 		54D3F3D4F356FC7FD0895871 /* TimerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9860A4151274EF32FA4E1 /* TimerStore.swift */; };
+		5775BC78299D82B849C07C93 /* MenuBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154549F2A9EA6CD7292AD386 /* MenuBarIcon.swift */; };
 		63FBE426AB9099C0E9AEC3A7 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E842AFE20D56260713FE0 /* AppSettings.swift */; };
 		B71ECF8689991149FA6F36F5 /* SessionPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1643675B6F351900FC27E54E /* SessionPhase.swift */; };
 		DC9BACEC622D4949E4F082FE /* ArcTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1953581CA29677702F07537F /* ArcTimerView.swift */; };
@@ -33,6 +34,7 @@
 		020E4A6F54D61D5AC23EE08C /* TimerStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStoreTests.swift; sourceTree = "<group>"; };
 		04E9860A4151274EF32FA4E1 /* TimerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStore.swift; sourceTree = "<group>"; };
 		13AE08D9A779DE0DA2F45A23 /* PomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		154549F2A9EA6CD7292AD386 /* MenuBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIcon.swift; sourceTree = "<group>"; };
 		1643675B6F351900FC27E54E /* SessionPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPhase.swift; sourceTree = "<group>"; };
 		1953581CA29677702F07537F /* ArcTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcTimerView.swift; sourceTree = "<group>"; };
 		1F18AF74266B4F06163B5D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				2B2E842AFE20D56260713FE0 /* AppSettings.swift */,
 				1F18AF74266B4F06163B5D01 /* Info.plist */,
+				154549F2A9EA6CD7292AD386 /* MenuBarIcon.swift */,
 				A4A840B5E067AC536CFCA2B5 /* Pomodoro.entitlements */,
 				89720243547C2AC7DE9E92D8 /* PomodoroApp.swift */,
 				1643675B6F351900FC27E54E /* SessionPhase.swift */,
@@ -199,6 +202,7 @@
 				63FBE426AB9099C0E9AEC3A7 /* AppSettings.swift in Sources */,
 				DC9BACEC622D4949E4F082FE /* ArcTimerView.swift in Sources */,
 				0BAB3A72E1D9C5A6FD7A86A2 /* ControlPopoverView.swift in Sources */,
+				5775BC78299D82B849C07C93 /* MenuBarIcon.swift in Sources */,
 				E0FC4C40FF44D22D650F893F /* PomodoroApp.swift in Sources */,
 				B71ECF8689991149FA6F36F5 /* SessionPhase.swift in Sources */,
 				49D54B0231FAEDCE4FC5295F /* SettingsView.swift in Sources */,
