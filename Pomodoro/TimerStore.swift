@@ -5,6 +5,8 @@ import AppKit
 
 @MainActor
 class TimerStore: ObservableObject {
+    static let shared = TimerStore()
+
     @Published var phase: SessionPhase = .work
     @Published var secondsRemaining: Int
     @Published var isRunning: Bool = false

@@ -14,6 +14,9 @@
 		E0FC4C40FF44D22D650F893F /* PomodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89720243547C2AC7DE9E92D8 /* PomodoroApp.swift */; };
 		F237E6BE0FF16F3635D100A9 /* TimerStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020E4A6F54D61D5AC23EE08C /* TimerStoreTests.swift */; };
 		FAA146F1F4AC51A9474C41DB /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D1CE255AE79D43D8FF3CF /* AppSettingsTests.swift */; };
+		AA000001000000000000AA01 /* ArcTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001000000000000BB01 /* ArcTimerView.swift */; };
+		AA000001000000000000AA02 /* ControlPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001000000000000BB02 /* ControlPopoverView.swift */; };
+		AA000001000000000000AA03 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001000000000000BB03 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 		89720243547C2AC7DE9E92D8 /* PomodoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroApp.swift; sourceTree = "<group>"; };
 		A4A840B5E067AC536CFCA2B5 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
 		D15D1CE255AE79D43D8FF3CF /* AppSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
+		AA000001000000000000BB01 /* ArcTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcTimerView.swift; sourceTree = "<group>"; };
+		AA000001000000000000BB02 /* ControlPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPopoverView.swift; sourceTree = "<group>"; };
+		AA000001000000000000BB03 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 				89720243547C2AC7DE9E92D8 /* PomodoroApp.swift */,
 				1643675B6F351900FC27E54E /* SessionPhase.swift */,
 				04E9860A4151274EF32FA4E1 /* TimerStore.swift */,
+				AA000001000000000000CC01 /* Views */,
 			);
 			path = Pomodoro;
 			sourceTree = "<group>";
@@ -89,6 +96,16 @@
 				4B01775164094D580514E673 /* PomodoroTests */,
 				2E8674BBDE16B20B81905870 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		AA000001000000000000CC01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA000001000000000000BB01 /* ArcTimerView.swift */,
+				AA000001000000000000BB02 /* ControlPopoverView.swift */,
+				AA000001000000000000BB03 /* SettingsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +200,9 @@
 				E0FC4C40FF44D22D650F893F /* PomodoroApp.swift in Sources */,
 				B71ECF8689991149FA6F36F5 /* SessionPhase.swift in Sources */,
 				54D3F3D4F356FC7FD0895871 /* TimerStore.swift in Sources */,
+				AA000001000000000000AA01 /* ArcTimerView.swift in Sources */,
+				AA000001000000000000AA02 /* ControlPopoverView.swift in Sources */,
+				AA000001000000000000AA03 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

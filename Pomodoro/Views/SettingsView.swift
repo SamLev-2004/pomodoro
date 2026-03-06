@@ -46,9 +46,9 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .frame(width: 380, height: 360)
-        .onChange(of: settings.workDuration) { _, _ in store.applySettingsChange() }
-        .onChange(of: settings.shortBreakDuration) { _, _ in store.applySettingsChange() }
-        .onChange(of: settings.longBreakDuration) { _, _ in store.applySettingsChange() }
+        .onChange(of: settings.workDuration) { _ in store.applySettingsChange() }
+        .onChange(of: settings.shortBreakDuration) { _ in store.applySettingsChange() }
+        .onChange(of: settings.longBreakDuration) { _ in store.applySettingsChange() }
     }
 
     @ViewBuilder
