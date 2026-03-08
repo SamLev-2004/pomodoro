@@ -1,7 +1,9 @@
 import Foundation
 
+@MainActor
 class AppSettings: ObservableObject {
     static let shared = AppSettings()
+    static let availableSounds = ["Basso", "Blow", "Bottle", "Frog", "Funk", "Glass", "Hero", "Morse", "Ping", "Pop", "Purr", "Sosumi", "Submarine", "Tink"]
 
     @Published var workDuration: Int {
         didSet { UserDefaults.standard.set(workDuration, forKey: "workDuration") }
@@ -27,12 +29,13 @@ class AppSettings: ObservableObject {
 
     init() {
         let d = UserDefaults.standard
-        self.workDuration = d.object(forKey: "workDuration") as? Int ?? 25 * 60
-        self.shortBreakDuration = d.object(forKey: "shortBreakDuration") as? Int ?? 5 * 60
-        self.longBreakDuration = d.object(forKey: "longBreakDuration") as? Int ?? 15 * 60
-        self.sessionsBeforeLongBreak = d.object(forKey: "sessionsBeforeLongBreak") as? Int ?? 4
+        self.workDuration = max(60, d.object(forKey: "workDuration") as? Int ?? 25 * 60)
+        self.shortBreakDuration = max(60, d.object(forKey: "shortBreakDuration") as? Int ?? 5 * 60)
+        self.longBreakDuration = max(60, d.object(forKey: "longBreakDuration") as? Int ?? 15 * 60)
+        self.sessionsBeforeLongBreak = max(1, d.object(forKey: "sessionsBeforeLongBreak") as? Int ?? 4)
         self.soundEnabled = d.object(forKey: "soundEnabled") as? Bool ?? true
-        self.soundName = d.string(forKey: "soundName") ?? "Glass"
+        let stored = d.string(forKey: "soundName") ?? "Glass"
+        self.soundName = Self.availableSounds.contains(stored) ? stored : "Glass"
         self.autoStart = d.object(forKey: "autoStart") as? Bool ?? false
     }
 

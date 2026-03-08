@@ -1,6 +1,7 @@
 import XCTest
 @testable import Pomodoro
 
+@MainActor
 final class AppSettingsTests: XCTestCase {
 
     override func setUp() {

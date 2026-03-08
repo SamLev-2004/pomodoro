@@ -9,8 +9,7 @@ struct SettingsView: View {
     @ObservedObject var settings: AppSettings
     @ObservedObject var store: TimerStore
 
-    private let availableSounds = ["Glass", "Ping", "Pop", "Blow", "Bottle", "Frog",
-                                   "Funk", "Hero", "Morse", "Purr", "Sosumi", "Submarine", "Tink"]
+    private var availableSounds: [String] { AppSettings.availableSounds }
 
     var body: some View {
         Form {

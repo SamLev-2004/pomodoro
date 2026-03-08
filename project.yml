@@ -23,6 +23,7 @@ targets:
         MACOSX_DEPLOYMENT_TARGET: "14.0"
         INFOPLIST_FILE: Pomodoro/Info.plist
         CODE_SIGN_ENTITLEMENTS: Pomodoro/Pomodoro.entitlements
+        ENABLE_HARDENED_RUNTIME: YES
     dependencies:
       - package: KeyboardShortcuts
 
