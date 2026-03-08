@@ -23,6 +23,7 @@ class TimerStore: ObservableObject {
     private var cancellable: AnyCancellable?
     private var startDate: Date?
     private var startSecondsRemaining: Int = 0
+    private var wakeObserver: NSObjectProtocol?
 
     init(settings: AppSettings = .shared) {
         self.settings = settings
@@ -107,7 +108,8 @@ class TimerStore: ObservableObject {
 
     private func playSound() {
         guard settings.soundEnabled else { return }
-        NSSound(named: NSSound.Name(settings.soundName))?.play()
+        let name = AppSettings.availableSounds.contains(settings.soundName) ? settings.soundName : "Glass"
+        NSSound(named: NSSound.Name(name))?.play()
     }
 
     private func sendNotification() {
@@ -127,16 +129,11 @@ class TimerStore: ObservableObject {
 
     private func observeSleep() {
         guard NSApp != nil else { return }
-        NSWorkspace.shared.notificationCenter.addObserver(
-            self,
-            selector: #selector(handleWake),
-            name: NSWorkspace.didWakeNotification,
-            object: nil
-        )
-    }
-
-    @objc private func handleWake() {
-        Task { @MainActor [weak self] in
+        wakeObserver = NSWorkspace.shared.notificationCenter.addObserver(
+            forName: NSWorkspace.didWakeNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
             guard let self = self,
                   self.isRunning,
                   let startDate = self.startDate else { return }
@@ -145,6 +142,12 @@ class TimerStore: ObservableObject {
             if self.secondsRemaining == 0 {
                 self.sessionComplete()
             }
+        }
+    }
+
+    deinit {
+        if let observer = wakeObserver {
+            NSWorkspace.shared.notificationCenter.removeObserver(observer)
         }
     }
 }
